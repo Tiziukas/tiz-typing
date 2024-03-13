@@ -2,13 +2,11 @@ Please follow the below instructions to fully integrate this into your chat.
 
 1. Find the below NUI Callback:
 
-RegisterNUICallback('chatResult', function(data, cb)
+--RegisterNUICallback('chatResult', function(data, cb)
   chatInputActive = false
   SetNuiFocus(false)
   if not data.canceled then
     local id = PlayerId()
-
-    --deprecated
     local r, g, b = 0, 0x99, 255
 
     if data.message:sub(1, 1) == '/' then
@@ -23,14 +21,13 @@ end)
 
 Replace it with:
 
-RegisterNUICallback('chatResult', function(data, cb)
+--RegisterNUICallback('chatResult', function(data, cb)
   chatInputActive = false
   SetNuiFocus(false)
   TriggerEvent("tiz-typing:cl:input", false)
   if not data.canceled then
     local id = PlayerId()
 
-    --deprecated
     local r, g, b = 0, 0x99, 255
 
     if data.message:sub(1, 1) == '/' then
