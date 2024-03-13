@@ -1,8 +1,8 @@
 Please follow the below instructions to fully integrate this into your chat.
 
 1. Find the below NUI Callback:
-
---RegisterNUICallback('chatResult', function(data, cb)
+ ```sh
+RegisterNUICallback('chatResult', function(data, cb)
   chatInputActive = false
   SetNuiFocus(false)
   if not data.canceled then
@@ -18,9 +18,9 @@ Please follow the below instructions to fully integrate this into your chat.
 
   cb('ok')
 end)
-
+```
 Replace it with:
-
+ ```sh
 --RegisterNUICallback('chatResult', function(data, cb)
   chatInputActive = false
   SetNuiFocus(false)
@@ -39,9 +39,9 @@ Replace it with:
 
   cb('ok')
 end)
-
+```
 2. Find the following thread:
-
+ ```sh
 Citizen.CreateThread(function()
   SetTextChatEnabled(false)
   SetNuiFocus(false)
@@ -98,9 +98,9 @@ Citizen.CreateThread(function()
     end
   end
 end)
-
+```
 Replace it with:
-
+ ```sh
 Citizen.CreateThread(function()
   SetTextChatEnabled(false)
   SetNuiFocus(false)
@@ -159,3 +159,4 @@ Citizen.CreateThread(function()
     end
   end
 end)
+```
