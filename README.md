@@ -24,7 +24,7 @@ Replace it with:
 RegisterNUICallback('chatResult', function(data, cb)
   chatInputActive = false
   SetNuiFocus(false)
-  TriggerEvent("tiz-typing:cl:input", false)
+  TriggerEvent("tiz-typing:input", false)
   if not data.canceled then
     local id = PlayerId()
 
@@ -115,7 +115,7 @@ Citizen.CreateThread(function()
       if IsControlPressed(0, isRDR and `INPUT_MP_TEXT_CHAT_ALL` or 245) --[[ INPUT_MP_TEXT_CHAT_ALL ]] then
         chatInputActive = true
         chatInputActivating = true
-        TriggerEvent("tiz-typing:cl:input", true)
+        TriggerEvent("tiz-typing:input", true)
         SendNUIMessage({
           type = 'ON_OPEN'
         })
@@ -125,7 +125,7 @@ Citizen.CreateThread(function()
     if chatInputActivating then
       if not IsControlPressed(0, isRDR and `INPUT_MP_TEXT_CHAT_ALL` or 245) then
         SetNuiFocus(true)
-        TriggerEvent("tiz-typing:cl:input", true)
+        TriggerEvent("tiz-typing:input", true)
         chatInputActivating = false
       end
     end
