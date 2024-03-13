@@ -40,7 +40,7 @@ local function fetchPlayers()
 end
 
 RegisterNetEvent("tiz-typing:input", function(status)
-    if not (GetInvokingResource() == Config.ChatResourceName) then
+    if not (GetInvokingResource() == Config.ChatName) then
         return
     end
     local selectedPlayers = fetchPlayers()
