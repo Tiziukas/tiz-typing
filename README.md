@@ -21,7 +21,7 @@ end)
 ```
 Replace it with:
  ```sh
---RegisterNUICallback('chatResult', function(data, cb)
+RegisterNUICallback('chatResult', function(data, cb)
   chatInputActive = false
   SetNuiFocus(false)
   TriggerEvent("tiz-typing:cl:input", false)
